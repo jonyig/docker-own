@@ -6,6 +6,7 @@ docker compose \
   -f docker-compose.go-leetcode.yml \
   up -d \
   php-81 \
+  traefik \
   mysql \
   golang-180 \
   ;
