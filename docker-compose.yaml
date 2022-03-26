@@ -6,6 +6,16 @@ networks:
 
 
 services:
+  php-81:
+    image: php81
+    build:
+      context: .
+      dockerfile: config/php/81/Dockerfile
+    ports:
+      - 9000:9000
+    container_name: php81
+    networks:
+      - backend
 
   mysql:
     image: library/mysql:8.0
