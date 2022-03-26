@@ -66,3 +66,14 @@ services:
     - 15672:15672
     networks:
       - backend
+  mongo:
+    image: library/mongo:5.0
+    ports:
+    - 27017:27017
+    volumes:
+    - ./data/mongo-50:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+    networks:
+      - backend
