@@ -47,9 +47,9 @@ services:
     networks:
       - backend
 
-  golang-185:
+  golang-180:
     image: library/golang:1.8.0-alpine
-    container_name: golang-185
+    container_name: golang-180
     networks:
       - backend
     command: tail -f /dev/null
