@@ -9,11 +9,20 @@ services:
   traefik:
     image: library/traefik:latest
     container_name: traefik
+    restart: always
+    # Enables the web UI and tells Traefik to listen to docker
+    # 當容器啟動完畢後最後輸入的command
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker"
     ports:
       - "80:80"
       - "443:443"
+      # The Web UI (enabled by --api.insecure=true)
       - "8080:8080"
     volumes:
+      # So that Traefik can listen to the Docker events
+      # 當掛載docker.sock時可以讓容器監聽主機上所有docker的容器事件
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
       - backend
