@@ -9,6 +9,7 @@ services:
 
   mysql:
     image: library/mysql:8.0
+    container_name: mysql80
     ports:
       - 3306:3306
     networks:
@@ -37,6 +38,7 @@ services:
 
   redis-50:
     image: redis:alpine
+    container_name: redis-50
     command: redis-server --requirepass ${REDIS_PASSWORD}
     ports:
       - 6379:6379
@@ -44,3 +46,11 @@ services:
       - ./data/redis-50:/data
     networks:
       - backend
+
+  golang-185:
+    image: library/golang:1.8.0-alpine
+    container_name: golang-185
+    networks:
+      - backend
+    command: tail -f /dev/null
+
