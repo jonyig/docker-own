@@ -4,8 +4,6 @@ services:
   php-80:
     volumes:
       - ${PROJECT_PATH}/practice-app:/usr/share/nginx/html/practice-app
-      - ./config/nginx/index.php:/usr/share/nginx/html/index.php
   nginx:
     volumes:
       - ${PROJECT_PATH}/practice-app:/usr/share/nginx/html/practice-app
-      - ./config/nginx/index.php:/usr/share/nginx/html/index.php
