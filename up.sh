@@ -5,6 +5,6 @@ docker compose \
   -f docker-compose.practice-app.yml \
   -f docker-compose.go-leetcode.yml \
   up -d \
-  php-81 \
+  php-80 \
   nginx \
   ;

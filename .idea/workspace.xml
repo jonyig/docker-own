@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d130db5-56a4-4262-aa2d-727dda34063c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/php/80/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/nginx/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/config/nginx/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/config/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/php/81/Dockerfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.practice-app.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.practice-app.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/up.sh" beforeDir="false" afterPath="$PROJECT_DIR$/up.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648229374771</updated>
-      <workItem from="1648229375975" duration="18873000" />
+      <workItem from="1648229375975" duration="20171000" />
     </task>
     <servers />
   </component>

@@ -37,14 +37,14 @@ services:
     ports:
     - 80:80
 
-  php-81:
-    image: php81
+  php-80:
+    image: php80
     build:
       context: .
-      dockerfile: config/php/81/Dockerfile
+      dockerfile: config/php/80/Dockerfile
     expose:
       - 9000
-    container_name: php81
+    container_name: php80
     networks:
       - backend
 

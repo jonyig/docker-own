@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  php-81:
+  php-80:
     volumes:
       - ${PROJECT_PATH}/practice-app:/usr/share/nginx/html/practice-app
       - ./config/nginx/index.php:/usr/share/nginx/html/index.php
