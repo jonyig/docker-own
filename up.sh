@@ -7,4 +7,6 @@ docker compose \
   up -d \
   php-80 \
   nginx \
+  mysql \
+  traefik \
   ;
