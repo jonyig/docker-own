@@ -27,6 +27,18 @@ services:
     networks:
       - backend
 
+  nginx:
+    image: jonny-nginx
+    build:
+      context: ./config/nginx
+    container_name: nginx
+    volumes:
+      - ./config/nginx/index.html:/usr/share/nginx/html/index.html
+    networks:
+      - backend
+    ports:
+    - 80:80
+
   php-81:
     image: php81
     build:
