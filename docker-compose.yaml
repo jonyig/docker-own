@@ -15,6 +15,7 @@ services:
     command:
       - "--api.insecure=true"
       - "--providers.docker"
+      - "--entrypoints.web.address=:80"
     ports:
       - "80:80"
       - "443:443"
@@ -34,8 +35,8 @@ services:
     container_name: nginx
     networks:
       - backend
-    ports:
-    - 80:80
+    expose:
+      - 80
 
   php-80:
     image: php80

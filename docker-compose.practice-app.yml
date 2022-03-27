@@ -8,3 +8,8 @@ services:
     volumes:
       - ${PROJECT_PATH}/practice-app:/var/www/html/practice-app
       - ./config/nginx/practice-app.conf:/etc/nginx/conf.d/practice-app.conf
+    labels:
+      - "traefik.http.routers.web.rule=Host(`practice-app.local`)"
+      - "traefik.http.routers.web.entrypoints=web"
+
+
