@@ -32,8 +32,6 @@ services:
     build:
       context: ./config/nginx
     container_name: nginx
-    volumes:
-      - ./config/nginx/index.html:/usr/share/nginx/html/index.html
     networks:
       - backend
     ports:

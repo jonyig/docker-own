@@ -3,4 +3,9 @@ version: "3"
 services:
   php-81:
     volumes:
-      - ${PROJECT_PATH}/practice-app:/var/www/html/practice-app
+      - ${PROJECT_PATH}/practice-app:/usr/share/nginx/html/practice-app
+      - ./config/nginx/index.php:/usr/share/nginx/html/index.php
+  nginx:
+    volumes:
+      - ${PROJECT_PATH}/practice-app:/usr/share/nginx/html/practice-app
+      - ./config/nginx/index.php:/usr/share/nginx/html/index.php
