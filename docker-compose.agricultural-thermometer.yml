@@ -1,0 +1,6 @@
+version: "3"
+
+services:
+  golang-180:
+    volumes:
+      - ${PROJECT_PATH}/agricultural-thermometer:/go/src/agricultural-thermometer

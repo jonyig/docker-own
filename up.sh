@@ -9,4 +9,6 @@ docker compose \
   nginx \
   mysql \
   traefik \
+  redis-50 \
+  golang-180 \
   ;
