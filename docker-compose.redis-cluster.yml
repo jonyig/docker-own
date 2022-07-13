@@ -69,6 +69,10 @@ services:
       - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
       - 'REDIS_CLUSTER_CREATOR=yes'
 
+# if you want to use another redis desktop manager, you must run this container
+# it need to connect redis-cluster by ssh
+# ssh 127.0.0.1:34555
+# redis node: docker-own_redis-node-0_1:6379
   sshd:
     image: jonny-sshd
     build:
