@@ -4,6 +4,8 @@ services:
     image: docker.io/bitnami/redis-cluster:7.0
     volumes:
       - ./data/redis-cluster_data-0:/bitnami/redis/data
+    networks:
+      - backend
     environment:
       - 'REDIS_PASSWORD=jonny'
       - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
@@ -12,6 +14,8 @@ services:
     image: docker.io/bitnami/redis-cluster:7.0
     volumes:
       - ./data/redis-cluster_data-1:/bitnami/redis/data
+    networks:
+      - backend
     environment:
       - 'REDIS_PASSWORD=jonny'
       - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
@@ -20,6 +24,8 @@ services:
     image: docker.io/bitnami/redis-cluster:7.0
     volumes:
       - ./data/redis-cluster_data-2:/bitnami/redis/data
+    networks:
+      - backend
     environment:
       - 'REDIS_PASSWORD=jonny'
       - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
@@ -28,6 +34,8 @@ services:
     image: docker.io/bitnami/redis-cluster:7.0
     volumes:
       - ./data/redis-cluster_data-3:/bitnami/redis/data
+    networks:
+      - backend
     environment:
       - 'REDIS_PASSWORD=jonny'
       - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
@@ -36,6 +44,8 @@ services:
     image: docker.io/bitnami/redis-cluster:7.0
     volumes:
       - ./data/redis-cluster_data-4:/bitnami/redis/data
+    networks:
+      - backend
     environment:
       - 'REDIS_PASSWORD=jonny'
       - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
@@ -44,6 +54,8 @@ services:
     image: docker.io/bitnami/redis-cluster:7.0
     volumes:
       - ./data/redis-cluster_data-5:/bitnami/redis/data
+    networks:
+      - backend
     depends_on:
       - redis-node-0
       - redis-node-1
