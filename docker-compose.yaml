@@ -90,7 +90,7 @@ services:
       - backend
 
   golang-180:
-    image: library/golang:1.8.0-alpine
+    image: golang:1.18-alpine
     container_name: golang-180
     networks:
       - backend
