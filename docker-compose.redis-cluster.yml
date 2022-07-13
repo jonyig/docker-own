@@ -71,3 +71,13 @@ services:
       - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
       - 'REDIS_CLUSTER_CREATOR=yes'
 
+  sshd:
+    image: jonny-sshd
+    build:
+      context: ./config/redis-cluster-sshd
+    container_name: sshd
+    networks:
+      - backend
+    ports:
+      - "34555:22"
+
