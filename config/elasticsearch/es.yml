@@ -1,31 +1,29 @@
 cluster.name: es-cluster
 
 bootstrap.memory_lock: true
-bootstrap.system_call_filter: false
 
 network.host: 0.0.0.0
 http.host: 0.0.0.0
 
-transport.tcp.port: 9300
+transport.port: 9300
 
-discovery.zen.minimum_master_nodes: 2
+# setting connection node
+discovery.seed_hosts: ["es01","es02", "es03"]
 
-discovery.zen.ping.unicast.hosts: ["es01:9300","es02:9300", "es03:9300"]
-
-node.data: true
-node.master: true
-
-node.max_local_storage_nodes: 7
+node.roles: [master,data,ingest,remote_cluster_client]
 
 xpack.security.enabled: false
 xpack.watcher.enabled: true
 
-# enable kibana
-xpack.monitoring.enabled: true
+# kibana setting
+xpack.monitoring.templates.enabled: true
 xpack.monitoring.collection.enabled: true
+
 
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 
+# close folder protection
 cluster.routing.allocation.disk.threshold_enabled: false
 
+cluster.initial_master_nodes: ["es01","es02","es03"]

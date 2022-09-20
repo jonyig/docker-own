@@ -2,7 +2,7 @@ version: '3.7'
 services:
   es01:
     container_name: es01
-    image: elasticsearch:6.8.23
+    image: elasticsearch:8.4.1
     restart: always
     environment:
       - node.name=es01
@@ -23,7 +23,7 @@ services:
 
   es02:
     container_name: es02
-    image: elasticsearch:6.8.23
+    image: elasticsearch:8.4.1
     restart: always
     environment:
       - node.name=es02
@@ -44,7 +44,7 @@ services:
 
   es03:
     container_name: es03
-    image: elasticsearch:6.8.23
+    image: elasticsearch:8.4.1
     restart: always
     environment:
       - node.name=es03
@@ -65,7 +65,7 @@ services:
 
   kibana:
     container_name: kibana
-    image: docker.elastic.co/kibana/kibana:6.8.23
+    image: docker.elastic.co/kibana/kibana:8.4.1
     restart: always
     environment:
       - ELASTICSEARCH_URL=http://es01:9200
