@@ -120,3 +120,9 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
     networks:
       - backend
+  pyroscope:
+    image: pyroscope/pyroscope:latest
+    ports:
+      - 4040:4040
+    command:
+      - "server"
