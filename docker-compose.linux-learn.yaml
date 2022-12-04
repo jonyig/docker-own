@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  ubuntu:
+    image: ubuntu:22.04
+    container_name: linux-learn
+    restart: always
+

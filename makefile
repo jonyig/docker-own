@@ -26,3 +26,9 @@ docker-up:
        redis-node-5 \
        sshd \
        ;
+
+docker-linux-learn:
+	 docker compose \
+	   -f docker-compose.linux-learn.yaml \
+	   up -d \
+	   ;
