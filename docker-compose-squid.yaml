@@ -5,6 +5,8 @@ services:
     image: ubuntu/squid
     container_name: squid-proxy
     tty: true
+    ports:
+      - 3128:3128
     volumes:
-      - ./config/squid/squid.conf:/etc/squid/squid.conf
+      - ./config/squid/squid-1.conf:/etc/squid/squid.conf
 
