@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  ubuntu:
+  linux-learn:
     image: ubuntu:22.04
     container_name: linux-learn
-    restart: always
+    tty: true
 

@@ -4,6 +4,7 @@ git-push:
 docker-down:
 	 docker compose \
        -f docker-compose.yaml \
+       -f docker-compose.linux-learn.yaml \
        -f docker-compose.redis-cluster.yml \
        down \
        ;
@@ -31,4 +32,5 @@ docker-linux-learn:
 	 docker compose \
 	   -f docker-compose.linux-learn.yaml \
 	   up -d \
+	   linux-learn \
 	   ;
