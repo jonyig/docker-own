@@ -1,0 +1,76 @@
+version: "3"
+
+networks:
+  backend:
+    driver: bridge
+
+
+services:
+  mongo-global:
+    image: library/mongo:4.4
+    container_name: mongo-44-global
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo-50:/data/db
+    networks:
+      - backend
+  mongo-local:
+    image: library/mongo:4.4
+    container_name: mongo-44-local
+    ports:
+      - 27018:27017
+    volumes:
+      - ./data/mongo-44-local:/data/db
+    networks:
+      - backend
+  redis-main:
+    image: 'bitnami/redis:7.0.5'
+    platform: linux/amd64
+    environment:
+      - REDIS_PASSWORD=1234
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
+  redis-sentinel:
+    image: 'bitnami/redis-sentinel:7.0.5'
+    platform: linux/amd64
+    environment:
+      - REDIS_MASTER_HOST=redis
+      - REDIS_MASTER_SET=redis
+      - REDIS_MASTER_PASSWORD=1234
+      - REDIS_SENTINEL_PASSWORD=1234
+    depends_on:
+      - redis-main
+    ports:
+      - "26379:26379"
+    expose:
+      - "26379"    
+
+  golang:
+    image: artifactory.maaii.com/lc-docker-local/email-service
+    container_name: email-service-go
+    ports:
+      - "8999:8999"
+    environment:
+      - AUTH_LIST= {"test":"123"}
+      - AUTH_SECRETE= 123
+  redis:
+    image: redis:alpine
+    container_name: redis
+    command: redis-server --requirepass root
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data/redis:/data
+    networks:
+      - backend
+  nginx:
+    image: nginx:alpine
+    container_name: email-service-client
+    ports:
+      - "8000:8999"
+    volumes:
+      - ../../ckeditor-demo/docker-config/email-service.conf:/etc/nginx/conf.d/email-service.conf
+      - ../../ckeditor-demo:/usr/share/email-service/

@@ -131,6 +131,7 @@ services:
       - 27017:27017
     volumes:
       - ./data/mongo-50:/data/db
+      - ./config/mongo-50/mongo.conf:/etc/mongod.conf
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
