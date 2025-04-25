@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  pyroscope:
+    image: pyroscope/pyroscope:latest
+    container_name: pyroscope
+    environment:
+      - PYROSCOPE_SERVER_TYPE=single
+      - PYROSCOPE_STORAGE_PATH=/pyroscope-data
+      - PYROSCOPE_API_KEY=your-api-key  # 如果需要 API 密钥
+      - PYROSCOPE_UI_PORT=4040  # Web 界面端口
+    ports:
+      - "4040:4040"  # Web 界面暴露端口
+    volumes:
+      - ./data/pyroscope:/pyroscope-data  # 挂载本地路径
+    restart: unless-stopped
+
+volumes:
+  pyroscope_data:
+    driver: local
